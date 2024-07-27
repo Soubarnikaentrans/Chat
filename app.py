@@ -26,7 +26,7 @@ def preprocess_text(text):
     tokens = [[token for token in sentence if token not in stopwords.words('english')] for sentence in tokens]
     return [" ".join(sentence) for sentence in tokens], sentences
 
-pdf_path = 'C:\\Users\\User\\Documents\\Python\\aichatbot\\files\\report.pdf'  
+pdf_path = 'report.pdf'  
 pdf_text = extract_text_from_pdf(pdf_path)
 processed_text, original_sentences = preprocess_text(pdf_text)
 
@@ -54,5 +54,5 @@ def retrieve_information(query):
     return " ".join(relevant_sentences)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001,host='0.0.0.0')
+    app.run(debug=True, port=5001)
 
